@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
+/*   By: bdehais <bdehais@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 07:15:22 by bguyot            #+#    #+#             */
-/*   Updated: 2022/02/22 07:53:24 by bguyot           ###   ########.fr       */
+/*   Created: 2022/02/21 14:05:35 by bdehais           #+#    #+#             */
+/*   Updated: 2022/02/21 17:16:40 by bdehais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memcpy(void *dst, void *src, size_t n)
 {
 	size_t	i;
-	int		step;
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	if (len > 0)
+	i = 0;
+	if (dst != src)
 	{
-		i = 0;
-		step = 1;
-		if (src < dst)
-		{
-			i = len - 1;
-			step = -1;
-		}
-		while (i >= 0 && i < len)
+		while (i < n)
 		{
 			((char *) dst)[i] = ((char *) src)[i];
-			i += step;
+			i++;
 		}
 	}
 	return (dst);
