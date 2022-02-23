@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
+/*   By: bdehais <bdehais@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:21:36 by bguyot            #+#    #+#             */
-/*   Updated: 2022/02/23 13:21:41 by bguyot           ###   ########.fr       */
+/*   Created: 2022/02/23 10:55:32 by bdehais           #+#    #+#             */
+/*   Updated: 2022/02/23 13:18:27 by bdehais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	void	*res;
+	t_list	**res;
+	t_list	*tmp;
 
-	res = malloc(count * size);
+	res = malloc(sizeof (t_list *));
 	if (!res)
 		return (NULL);
-	ft_bzero(res, count * size);
-	return (res);
+	while (lst)
+	{
+		tmp = ft_lstnew(f(lst->content));
+		ft_lstadd_back(res, tmp);
+		ft_lstdelone(tmp, del);
+		lst = lst->next;
+	}
+	return (*res);
 }

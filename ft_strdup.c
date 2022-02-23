@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bdehais <bdehais@student.42mulhouse.fr>    +#+  +:+       +#+        */
+/*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 13:46:22 by bdehais           #+#    #+#             */
-/*   Updated: 2022/02/21 13:53:18 by bdehais          ###   ########.fr       */
+/*   Created: 2022/02/23 13:23:44 by bguyot            #+#    #+#             */
+/*   Updated: 2022/02/23 13:23:49 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *src)
 {

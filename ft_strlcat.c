@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bdehais <bdehais@student.42mulhouse.fr>    +#+  +:+       +#+        */
+/*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 13:41:09 by bdehais           #+#    #+#             */
-/*   Updated: 2022/02/21 17:03:24 by bdehais          ###   ########.fr       */
+/*   Created: 2022/02/23 13:23:56 by bguyot            #+#    #+#             */
+/*   Updated: 2022/02/23 13:24:01 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {

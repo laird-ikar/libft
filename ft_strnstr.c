@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bdehais <bdehais@student.42mulhouse.fr>    +#+  +:+       +#+        */
+/*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:05:49 by bdehais           #+#    #+#             */
-/*   Updated: 2022/02/21 17:32:51 by bdehais          ###   ########.fr       */
+/*   Created: 2022/02/23 13:24:16 by bguyot            #+#    #+#             */
+/*   Updated: 2022/02/23 13:24:21 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

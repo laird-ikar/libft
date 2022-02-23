@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 07:15:22 by bguyot            #+#    #+#             */
-/*   Updated: 2022/02/22 07:53:24 by bguyot           ###   ########.fr       */
+/*   Created: 2022/02/23 13:23:04 by bguyot            #+#    #+#             */
+/*   Updated: 2022/02/23 13:23:09 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	if (dst == NULL && src == NULL)
 		return (NULL);
-	if (len > 0)
+	if (len > 0 && dst != src)
 	{
 		i = 0;
 		step = 1;
