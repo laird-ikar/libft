@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:24:40 by bguyot            #+#    #+#              #
-#    Updated: 2022/02/23 13:24:43 by bguyot           ###   ########.fr        #
+#    Updated: 2022/02/23 19:06:29 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,18 +15,20 @@ SRCS = ft_isspace.c ft_striteri.c ft_putendl_fd.c ft_putnbr_fd.c ft_putchar_fd.c
 OBJS = ${SRCS:.c=.o}
 SRCS_BONUS = ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstsize_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
+CC				= gcc
+RM				= rm -f
+CFLAGS			= -Wall -Wextra -Werror -I.
 
 all: $(NAME)
 
-$(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRCS) -I libft.h
+$(NAME):	$(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 clean:
-	rm *.o
+	rm -f $(OBJS)
 
 fclean: clean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
