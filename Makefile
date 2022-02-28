@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:24:40 by bguyot            #+#    #+#              #
-#    Updated: 2022/02/23 19:06:29 by bguyot           ###   ########.fr        #
+#    Updated: 2022/02/28 12:20:40 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,17 +21,18 @@ CFLAGS			= -Wall -Wextra -Werror -I.
 
 all: $(NAME)
 
-$(NAME):	$(OBJS)
+$(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus:
-	gcc -Wall -Wextra -Werror -c $(SRCS_BONUS) -I libft.h
+bonus: $(OBJS_BONUS)
 	ar rcs $(NAME) $(OBJS_BONUS)
+
+.PHONY: all clean fclean re bonus
