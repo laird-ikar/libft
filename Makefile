@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:24:40 by bguyot            #+#    #+#              #
-#    Updated: 2022/02/28 12:20:40 by bguyot           ###   ########.fr        #
+#    Updated: 2022/03/01 08:22:24 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(OBJS_BONUS)
+bonus: $(NAME) $(OBJS_BONUS)
 	ar rcs $(NAME) $(OBJS_BONUS)
 
 .PHONY: all clean fclean re bonus
