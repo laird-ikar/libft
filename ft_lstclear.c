@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:23:22 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/01 10:33:33 by bguyot           ###   ########.fr       */
+/*   Created: 2022/02/23 13:22:19 by bguyot            #+#    #+#             */
+/*   Updated: 2022/02/23 13:22:24 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int nb, int fd)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (nb < 0)
+	t_list	*tmp;
+
+	if (!lst || !(*lst) || !del)
+		return ;
+	while (*lst)
 	{
-		write(fd, "-", 1);
-		if (nb <= -10)
-			ft_putnbr_fd(nb / -10, fd);
-		ft_putchar_fd((-1 * (nb % 10)) + '0', fd);
+		tmp = *lst;
+		*lst = (*lst)->next;
+		ft_lstdelone(tmp, del);
 	}
-	else if (nb >= 10)
-		ft_putnbr_fd(nb / 10, fd);
-	if (nb >= 0)
-		ft_putchar_fd(nb % 10 + '0', fd);
+	lst = NULL;
 }
