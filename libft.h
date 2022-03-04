@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:24:47 by bguyot            #+#    #+#             */
-/*   Updated: 2022/02/23 13:24:48 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/03/04 07:35:43 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ int		ft_atoi(const char *str);
 /* Return the number representing by str, skiping the firsts white spaces */
 int		ft_lstsize(t_list *lst);
 /* Return the number of element of the list lst*/
+int		ft_max(int a, int b);
+/* Return the max of a and b */
+int		ft_min(int a, int b);
+/* Return the max of a and b */
 
 void	ft_bzero(void *s, size_t n);
 /* Fill n byte of memory, at the address of s with 0s */
@@ -92,7 +96,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 void	*ft_memset(void *b, int c, size_t len);
 /* Fill n byte of memory at the b address with the value of c */
-void	*ft_memcpy(void *dst, void *src, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 /* Copy n byte of memory from src to dst */
 void	*ft_memmove(void *dst, const void *src, size_t len);
 /* Copy n byte of memory from src to dst in a

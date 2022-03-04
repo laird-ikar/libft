@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_min.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:23:00 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/03 11:59:39 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/04 07:34:25 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/04 07:34:35 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_min(int a, int b)
 {
-	size_t	i;
-
-	i = 0;
-	if (dst != src)
-	{
-		while (i < n)
-		{
-			((char *) dst)[i] = ((char *) src)[i];
-			i++;
-		}
-	}
-	return (dst);
+	if (a < b)
+		return (a);
+	return (b);
 }
