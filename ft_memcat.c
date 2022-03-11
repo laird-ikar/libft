@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:23:00 by bguyot            #+#    #+#             */
-/*   Updated: 2022/02/23 13:23:05 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/09 07:46:52 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/09 07:58:03 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, void *src, size_t n)
+void	*ft_memcat(const void *mem1, const void *mem2, size_t len1, size_t len2)
 {
-	size_t	i;
+	void	*res;
+	void	*ptr;
 
-	i = 0;
-	if (dst != src)
-	{
-		while (i < n)
-		{
-			((char *) dst)[i] = ((char *) src)[i];
-			i++;
-		}
-	}
-	return (dst);
+	res = ft_calloc(len1 + len2, 1);
+	if (!res)
+		return (NULL);
+	ptr = res;
+	while (len1--)
+		*(char *)(ptr++) = *(char *)(mem1++);
+	while (len2--)
+		*(char *)(ptr++) = *(char *)(mem2++);
+	return (res);
 }

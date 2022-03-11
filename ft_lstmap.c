@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bdehais <bdehais@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 10:55:32 by bdehais           #+#    #+#             */
-/*   Updated: 2022/03/01 15:59:02 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/02/23 13:18:27 by bdehais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,18 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new;
-	t_list	*result;
-	void	*temp;
+	t_list	**res;
+	t_list	*tmp;
 
-	if (!lst)
+	res = malloc(sizeof (t_list *));
+	if (!res)
 		return (NULL);
-	result = NULL;
 	while (lst)
 	{
-		temp = f(lst->content);
-		new = ft_lstnew(temp);
-		if (!new)
-		{
-			ft_lstclear(&result, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&result, new);
-		lst = lst->next;
+		tmp = ft_lstnew(f(lst->cont));
+		ft_lstadd_back(res, tmp);
+		ft_lstdelone(tmp, del);
+		lst = lst->nx;
 	}
-	return (result);
+	return (*res);
 }

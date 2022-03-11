@@ -6,37 +6,34 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:56 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/04 08:22:09 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/02/23 13:24:01 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	char		*d;
-	const char	*s;
-	size_t		n;
-	size_t		dlen;
+	size_t	i;
+	size_t	d_size;
+	size_t	s_size;
 
-	d = dst;
-	s = src;
-	n = size;
-	while (n-- && *d)
-		d++;
-	dlen = d - dst;
-	n = size - dlen;
-	if (n == 0)
-		return (dlen + ft_strlen(s));
-	while (*s != '\0')
+	i = 0;
+	d_size = 0;
+	s_size = 0;
+	while (src[s_size])
 	{
-		if (n != 1)
-		{
-			*d++ = *s;
-			n--;
-		}
-		s++;
+		s_size++;
 	}
-	*d = '\0';
-	return (dlen + (s - src));
+	while (dest[d_size])
+		d_size++;
+	while (i + d_size + 1 < size && src[i])
+	{
+		dest[d_size + i] = src[i];
+		i++;
+	}
+	dest[d_size + i] = '\0';
+	if (size > d_size)
+		return (d_size + s_size);
+	return (size + s_size);
 }

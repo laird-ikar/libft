@@ -1,26 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:22:42 by bguyot            #+#    #+#             */
-/*   Updated: 2022/02/23 13:22:47 by bguyot           ###   ########.fr       */
+/*   Created: 2022/02/23 13:22:07 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/03 07:15:42 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+static size_t	len(unsigned int n);
+
+char	*ft_utoa(unsigned int n)
 {
-	int	res;
+	char	*res;
+	size_t	size;
+	size_t	tmp;
+
+	size = len(n);
+	res = malloc((size + 1) * sizeof (char));
+	if (!res)
+		return (NULL);
+	res[0] = '0';
+	tmp = size - 1;
+	while (n > 0)
+	{
+		res[tmp--] = '0' + (n % 10);
+		n /= 10;
+	}
+	res[size] = '\0';
+	return (res);
+}
+
+static size_t	len(unsigned int n)
+{
+	size_t	res;
 
 	res = 0;
-	while (lst)
+	if (n == 0)
+		return (1);
+	while (n > 0)
 	{
-		res++;
-		lst = lst->nx;
+		n /= 10;
+		res ++;
 	}
 	return (res);
 }

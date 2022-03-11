@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:23:35 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/04 08:35:50 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/02/23 13:23:40 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if (*s == (char) c)
+		if (*s == c)
 			return ((char *) s);
 		s++;
 	}

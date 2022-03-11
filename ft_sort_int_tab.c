@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:23:00 by bguyot            #+#    #+#             */
-/*   Updated: 2022/02/23 13:23:05 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/10 10:36:33 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/10 10:36:54 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, void *src, size_t n)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	size_t	i;
+	int	i;
+	int	j;
+	int	temp;
 
-	i = 0;
-	if (dst != src)
+	j = 0;
+	while (j < size)
 	{
-		while (i < n)
+		i = 0;
+		while (i < size - 1 - j)
 		{
-			((char *) dst)[i] = ((char *) src)[i];
+			if (tab [i] > tab[i + 1])
+			{
+				temp = tab [i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = temp;
+			}
 			i++;
 		}
+		j++;
 	}
-	return (dst);
 }

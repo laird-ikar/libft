@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstmax.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:23:00 by bguyot            #+#    #+#             */
-/*   Updated: 2022/02/23 13:23:05 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/10 14:26:54 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/10 14:27:15 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, void *src, size_t n)
+int	ft_lstmaxint(t_list *lst)
 {
-	size_t	i;
+	int	max;
 
-	i = 0;
-	if (dst != src)
+	max = -2147483648;
+	while (lst)
 	{
-		while (i < n)
+		if (max < *(int *)lst->cont)
 		{
-			((char *) dst)[i] = ((char *) src)[i];
-			i++;
+			max = *(int *)lst->cont;
 		}
+		lst = lst->nx;
 	}
-	return (dst);
+	return (max);
 }

@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstcalendar.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 13:23:00 by bguyot            #+#    #+#             */
-/*   Updated: 2022/02/23 13:23:05 by bguyot           ###   ########.fr       */
+/*   Created: 2022/03/09 12:21:56 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/09 12:22:04 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, void *src, size_t n)
+t_list	*ft_lstcalendar(const t_list *lst, size_t calendar)
 {
-	size_t	i;
-
-	i = 0;
-	if (dst != src)
-	{
-		while (i < n)
-		{
-			((char *) dst)[i] = ((char *) src)[i];
-			i++;
-		}
-	}
-	return (dst);
+	if (!lst)
+		return (NULL);
+	while (calendar-- && lst->nx)
+		lst = lst->nx;
+	return ((t_list *) lst);
 }
