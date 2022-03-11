@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:24:40 by bguyot            #+#    #+#              #
-#    Updated: 2022/03/11 07:30:25 by bguyot           ###   ########.fr        #
+#    Updated: 2022/03/11 07:44:19 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ ft_lstmax.c ft_lstmin.c get_next_line.c ft_min.c ft_max.c
 OBJS 		= ${SRCS:.c=.o}
 CC			= gcc
 RM			= rm -f
-CFLAGS		= -Wall -Wextra -Werror -I.
+CFLAGS		= -Wall -Wextra -Werror
 
 all: $(NAME)
 
