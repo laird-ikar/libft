@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_printf_xint.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bguyot <bguyot@student.42mulhouse.fr>    +#+  +:+       +#+        */
+/*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 12:20:35 by bguyot           #+#    #+#             */
-/*   Updated: 2022/02/23 11:41:57 by bguyot          ###   ########.fr       */
+/*   Created: 2022/03/02 10:39:55 by bguyot            #+#    #+#             */
+/*   Updated: 2022/03/17 07:52:01 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_printf_xint(va_list args, int *count)
 {
-	int	i;
+	unsigned int	a;
+	char			*str;
 
-	if (!s || !f)
-		return ;
-	i = 0;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	a = (unsigned int) va_arg(args, int);
+	str = ft_utoa_base(a, "0123456789abcdef");
+	ft_putstr_fd(str, 1);
+	*count += ft_strlen(str);
+	free(str);
 }

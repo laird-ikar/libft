@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:24:47 by bguyot            #+#    #+#             */
-/*   Updated: 2022/03/11 07:24:23 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/04/11 09:07:50 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stddef.h>
 # include <stdio.h>
 # include <unistd.h>
+# include "ft_printf/ft_printf.h"
 
 # ifndef T_LIST
 #  define T_LIST
@@ -33,6 +34,9 @@ typedef struct s_list
 #  define BUFFER_SIZE	42
 # endif
 
+# ifndef T_GNL
+#  define T_GNL
+
 typedef struct s_gnl
 {
 	int		ret;
@@ -41,6 +45,8 @@ typedef struct s_gnl
 	char	buff[BUFFER_SIZE + 2];
 	int		i;
 }			t_gnl;
+
+# endif
 
 int		ft_isspace(char c);
 /* Return true if c is a whitespace, false otherwise */
@@ -85,6 +91,8 @@ int		ft_lstmaxint(t_list *lst);
 /* Return the maximum value of lst, interpreted as int */
 int		ft_lstminint(t_list *lst);
 /* Return the minimum value of lst, interpreted as int */
+int		ft_sqrt(int nb);
+/* Return the squareroot of nb */
 
 void	ft_bzero(void *s, size_t n);
 /* Fill n byte of memory, at the address of s with 0s */
@@ -148,6 +156,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 /* Return the address of the first occurence of needle in haystack */
 char	*ft_strdup(const char *s1);
 /* Allocate and return a copy of s1 */
+char	*ft_strndup(const char *src, size_t n);
+/* Allocate and return a null terminated string of the n first char of s1 */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 /* Allocate and return the substring starting at the index start
 ** of lenght len (NULL if allocation fails) */
@@ -173,7 +183,7 @@ char	*ft_ultoa_base(unsigned long nb, char *base);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 /* Allocate and return a string of f(i, s[i]) (NULL if allocation fails) */
 char	*get_next_line(int fd);
-/* Return the nx line of the file described by fd
+/* Return the next line of the file described by fd
 ** NULL is nothing can be read*/
 
 t_list	*ft_lstnew(void *cont);
