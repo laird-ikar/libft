@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:24:47 by bguyot            #+#    #+#             */
-/*   Updated: 2022/04/11 09:12:56 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/04/12 07:17:21 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,9 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 /* Apply f to every element of lst */
 void	ft_sort_int_tab(int *tab, int size);
 /* Sort the the given array of size size */
+void	ft_print_tab(char **tab);
+/* Print the array of string, separating each line with a \n ;
+** the array must be NULL terminated */
 
 size_t	ft_strlen(const char *s);
 /* Return the size of s */
