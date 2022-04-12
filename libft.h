@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:24:47 by bguyot            #+#    #+#             */
-/*   Updated: 2022/04/12 07:17:21 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/04/12 07:30:18 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,9 @@ int		ft_strcmp(const char *s1, const char *s2);
 ** and return the first diffrence (is ascii value) */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 /* Compare the at most n first chars of s1 and s2
+** and return the first diffrence (is ascii value) */
+int		ft_strcmp(const char *s1, const char *s2);
+/* Compare first chars of s1 and s2
 ** and return the first diffrence (is ascii value) */
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 /* Compare the at most n first bytes of s1 and s2
