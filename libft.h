@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:24:47 by bguyot            #+#    #+#             */
-/*   Updated: 2022/04/12 07:30:18 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/04/25 07:18:40 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,9 @@ void	ft_sort_int_tab(int *tab, int size);
 void	ft_print_tab(char **tab);
 /* Print the array of string, separating each line with a \n ;
 ** the array must be NULL terminated */
+void	ft_freen(void *arr, int n);
+/* Free all the members of arr, an array of malloc()-ed pointers of dimension n
+** and does it recursivly */
 
 size_t	ft_strlen(const char *s);
 /* Return the size of s */
