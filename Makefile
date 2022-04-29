@@ -6,7 +6,7 @@
 #    By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:24:40 by bguyot            #+#    #+#              #
-#    Updated: 2022/04/29 14:11:32 by bguyot           ###   ########.fr        #
+#    Updated: 2022/04/29 14:24:38 by bguyot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ ft_printf/ft_printf_str.c ft_printf/ft_printf_uint.c ft_printf/ft_printf_xint.c	
 ft_printf/ft_printf_upper_xint.c ft_strndup.c ft_print_tab.c
 OBJS 		= ${SRCS:.c=.o}
 CC			= @gcc
-RM			= rm -f
+RM			= @rm -f
 CFLAGS		= -Wall -Wextra -Werror
 
 all: $(NAME)
