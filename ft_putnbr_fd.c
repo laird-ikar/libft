@@ -16,7 +16,7 @@ void	ft_putnbr_fd(int nb, int fd)
 {
 	if (nb < 0)
 	{
-		write(1, "-", 1);
+		write(1, "-", fd);
 		if (nb <= -10)
 			ft_putnbr_fd(nb / -10, fd);
 		ft_putchar_fd((-1 * (nb % 10)) + '0', fd);
